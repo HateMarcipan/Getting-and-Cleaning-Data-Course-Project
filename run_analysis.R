@@ -1,6 +1,7 @@
 ## LOADING REQUIRED PACKAGES
 library(dplyr)
 library(reshape2)
+library(jsonlite)
 
 ## DOWNLOADING AND UNZIPING SOURCE DATA
 # creating temporary file
@@ -74,22 +75,32 @@ traindata<-tbl_df(traindata)
 traindata<-traindata %>% mutate(type="train")
 testdata<-testdata %>% mutate(type="test")
 
-# unioning test and train data
+# union of test and train data
 finaldata<-rbind(testdata,traindata)
 
 # adding activity names
 finaldata<-merge(finaldata,activitynames,by.x = "activityID", by.y = "activityID")
 
-# cleaning memory (all except finaldata)
-unlink(tempFol)
-rm(list = ls()[ls()!="finaldata"])
-
-# calculating mean ov each variable on subject ID and activity level
+# calculating mean of each variable on subject ID and activity level
 clean_data<-finaldata%>%group_by(activityname,subjectID,variable)%>%
     summarise(mean(value))%>%print
 
+# cleaning memory (all except clean_data)
+unlink(tempFol)
+rm(list = ls()[ls()!="clean_data"])
+
+# splitting variable column and removing resulting nested data frame using function flatten of jsonlite package
+clean_data<-transform(clean_data,variable=colsplit(variable, pattern ="-",names = c("signal", "calc","direction")))
+clean_data<-flatten(clean_data)
+
+# creating folder called data_qwerty in your working directiry if it doesn't exist
+if(!file.exists("./data_qwerty")){dir.create("./data_qwerty")}
+
 # outputing csv file with clean aggregated data to current working directory
-write.table(clean_data,file="clean_data.csv", sep=";")
+write.table(clean_data,file="./data_qwerty/ActivityRecognitionTidy.csv", sep=";")
+
+print(paste("File ActivityRecognitionTidy.csv can be found here: ",getwd(),"/data_qwerty",sep=""))
+
 
 
 
