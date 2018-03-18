@@ -14,7 +14,7 @@ Files you will find in this repository are:
 
 - README.md
 - CodeBook.md - file "that describes the variables, the data, and any transformations or work that I performed to clean up the data"
-- ActivityRecognitionTidy.csv - independent tidy data set which is created as a result of R script mentioned bellow
+- ActivityRecognitionTidy.txt - independent tidy data set which is created as a result of R script mentioned bellow
 - run_analysis.R - R script that you can download and source it so that it:
 
 1. downloads original data set from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip to the temporary location, unzips it and reads required data;

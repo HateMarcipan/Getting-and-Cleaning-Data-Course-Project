@@ -97,7 +97,7 @@ clean_data<-flatten(clean_data)
 if(!file.exists("./data_qwerty")){dir.create("./data_qwerty")}
 
 # outputing csv file with clean aggregated data to current working directory
-write.table(clean_data,file="./data_qwerty/ActivityRecognitionTidy.csv", sep=";")
+write.table(clean_data,file="./data_qwerty/ActivityRecognitionTidy.txt", sep=";",row.name=FALSE)
 
 print(paste("File ActivityRecognitionTidy.csv can be found here: ",getwd(),"/data_qwerty",sep=""))
 

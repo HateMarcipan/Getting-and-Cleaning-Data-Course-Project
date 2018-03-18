@@ -4,7 +4,7 @@ File that "describes the variables, the data, and any transformations or work pe
 
 
 ### The Data
-ActivityRecognitionTidy.csv file is a result of manipulations described bellow.
+ActivityRecognitionTidy.txt file is a result of manipulations described bellow.
 
 It has 15480 rows (30 subjects x 6 activities x 86 variables) and 6 columns, delimited by ";".
 
