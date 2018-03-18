@@ -25,7 +25,7 @@ For our purposes we do not need raw data under folders 'train/Inertial Signals' 
 - 'train/subject_train.txt': 2971 rows identifying the subject who performed the train activity for each window sample. Its range is from 1 to 30. 
 - 'test/X_test.txt': values of each observation for test data (7325 rows, 561 columns)
 - 'test/y_test.txt': activity ID performed by subject (7325 rows, 1 column)
-- 'test/subject_test.txt': 2971 rows identifying the subject who performed the test activity for each window sample. Its range is from 1 to 30. 
+- 'test/subject_test.txt': 7325 rows identifying the subject who performed the test activity for each window sample. Its range is from 1 to 30. 
 
 
 ### Data merging and transformations
