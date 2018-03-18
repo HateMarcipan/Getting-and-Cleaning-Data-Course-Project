@@ -3,7 +3,9 @@
 ### Purpose of this project
 
 This repository is created as a part of the final Getting and Cleaning Data Course Project.
+
 As per assignment description:"The purpose of this project is to demonstrate ... ability to collect, work with, and clean a data set."
+
 Data set used for this purpose as well as its description can be found here:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#
 
